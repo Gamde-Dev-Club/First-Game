@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckptmjqamin0l"]
+
+[ext_resource type="PackedScene" uid="uid://dwsy8gadj5g8j" path="res://player.tscn" id="1_dopym"]
+[ext_resource type="PackedScene" uid="uid://dwo414fpa4is3" path="res://coin.tscn" id="2_ootpb"]
+[ext_resource type="PackedScene" uid="uid://jwwhqqjvmb1p" path="res://enemy.tscn" id="3_ootpb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dopym"]
+font_size = 10
+
+[node name="Main" type="Node2D"]
+
+[node name="Score" type="Label" parent="."]
+offset_left = -112.0
+offset_top = -63.0
+offset_right = -68.0
+offset_bottom = -40.0
+text = "Score = 0"
+label_settings = SubResource("LabelSettings_dopym")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Player" parent="." node_paths=PackedStringArray("label") instance=ExtResource("1_dopym")]
+position = Vector2(-83, -4)
+label = NodePath("../Score")
+
+[node name="Coin" parent="." instance=ExtResource("2_ootpb")]
+position = Vector2(61, 26)
+
+[node name="Coin2" parent="." instance=ExtResource("2_ootpb")]
+position = Vector2(48, -35)
+
+[node name="Coin3" parent="." instance=ExtResource("2_ootpb")]
+position = Vector2(-13, 41)
+
+[node name="Coin4" parent="." instance=ExtResource("2_ootpb")]
+position = Vector2(-24, -43)
+
+[node name="Coin5" parent="." instance=ExtResource("2_ootpb")]
+position = Vector2(-83, 33)
+
+[node name="Enemy" parent="." instance=ExtResource("3_ootpb")]
+position = Vector2(51, -6)
+speed = 20
+
+[node name="Enemy2" parent="." instance=ExtResource("3_ootpb")]
+position = Vector2(16, -36)
+speed = 10

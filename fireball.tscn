@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://db553bi6dprex"]
+
+[ext_resource type="Script" uid="uid://gqrb5byoh1x5" path="res://fireball.gd" id="1_olwj8"]
+[ext_resource type="Texture2D" uid="uid://byhsiuvub13j2" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/fireball/fireball.png" id="1_sf4mh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olwj8"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdani"]
+atlas = ExtResource("1_sf4mh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nix7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olwj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdani")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sf4mh"]
+radius = 3.0
+
+[node name="Fireball" type="Area2D"]
+script = ExtResource("1_olwj8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nix7o")
+autoplay = "default"
+frame_progress = 0.00461544
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("CircleShape2D_sf4mh")
