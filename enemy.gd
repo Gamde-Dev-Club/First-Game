@@ -19,6 +19,10 @@ func _process(delta):
 	else:
 		sprite.play("idle")
 
+func die():
+	#sprite.play("death")
+	queue_free()
+
 func _on_killbox_body_entered(body):
-	#if body.is_in_group("player"):
-	body.queue_free()
+	if body is Player:
+		body.die()
