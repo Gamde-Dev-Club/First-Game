@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://db553bi6dprex"]
 
-[ext_resource type="Script" uid="uid://gqrb5byoh1x5" path="res://fireball.gd" id="1_olwj8"]
+[ext_resource type="Script" uid="uid://gqrb5byoh1x5" path="res://Scenes/Fireball/fireball.gd" id="1_olwj8"]
 [ext_resource type="Texture2D" uid="uid://byhsiuvub13j2" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/fireball/fireball.png" id="1_sf4mh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olwj8"]

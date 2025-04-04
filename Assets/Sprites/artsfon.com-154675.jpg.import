@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mtlt8in81aei"
-path="res://.godot/imported/FinalLogoLargeUpdated.png-bced6971eb386a1fdef604a427e4c56d.ctex"
+uid="uid://c1j5lgrbfs8qu"
+path="res://.godot/imported/artsfon.com-154675.jpg-9881423a5d8fcccb399f40139a922537.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FinalLogoLargeUpdated.png"
-dest_files=["res://.godot/imported/FinalLogoLargeUpdated.png-bced6971eb386a1fdef604a427e4c56d.ctex"]
+source_file="res://Assets/Sprites/artsfon.com-154675.jpg"
+dest_files=["res://.godot/imported/artsfon.com-154675.jpg-9881423a5d8fcccb399f40139a922537.ctex"]
 
 [params]
 

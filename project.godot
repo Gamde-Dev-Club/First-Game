@@ -12,9 +12,9 @@ config_version=5
 
 config/name="GDC 1st Catchup"
 config/tags=PackedStringArray("game_dev_club_learning_project")
-run/main_scene="uid://ckptmjqamin0l"
+run/main_scene="uid://d001nm60u62u7"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/icon.svg"
 
 [input]
 

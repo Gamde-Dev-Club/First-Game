@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1b550taicrl1"]
+
+[ext_resource type="Script" uid="uid://cshs1faviigvt" path="res://Scenes/FinishGoal/finish_goal.gd" id="1_i5oi2"]
+[ext_resource type="Texture2D" uid="uid://ii2mbpcyv0e5" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/objectives/flag/flag_1.png" id="2_ks7vq"]
+[ext_resource type="Texture2D" uid="uid://be5him6d70f68" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/objectives/flag/flag_2.png" id="3_b1b8g"]
+[ext_resource type="Texture2D" uid="uid://c7qsd3hjjcx33" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/objectives/flag/flag_3.png" id="4_wkhd8"]
+[ext_resource type="Texture2D" uid="uid://ddq2cr2s54cvq" path="res://2D Pixel Dungeon Asset Pack/items and trap_animation/objectives/flag/flag_4.png" id="5_h4rp7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3d1qx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ks7vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b1b8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wkhd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h4rp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ks7vq"]
+radius = 7.0
+
+[node name="FinishGoal" type="Area2D"]
+script = ExtResource("1_i5oi2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3d1qx")
+autoplay = "default"
+frame_progress = 0.460264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ks7vq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

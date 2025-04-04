@@ -10,7 +10,7 @@ var score = 0
 @export var speed = 90
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const FIREBALL: PackedScene = preload("res://fireball.tscn")
+const FIREBALL: PackedScene = preload("res://Scenes/Fireball/fireball.tscn")
 @onready var gun_point: Marker2D = $GunPoint
 @onready var shoot_timer: Timer = $ShootTimer
 @export var time_between_shots: float = 0.5
