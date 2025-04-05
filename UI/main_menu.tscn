@@ -1,28 +1,129 @@
-[gd_scene load_steps=2 format=3 uid="uid://d001nm60u62u7"]
+[gd_scene load_steps=3 format=3 uid="uid://d001nm60u62u7"]
 
 [ext_resource type="Script" uid="uid://cqddoockldk5c" path="res://UI/main_menu.gd" id="1_p8ccj"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_p8ccj"]
+font_size = 46
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_p8ccj")
+metadata/_edit_lock_ = true
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="MainMenu" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_top = 235.0
-offset_right = 1151.0
-offset_bottom = 411.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -33.0
+offset_right = 31.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/HBoxContainer"]
 layout_mode = 2
 
-[node name="Level1" type="Button" parent="UI/HBoxContainer/VBoxContainer"]
+[node name="HomeToAudio" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Audio Settings"
+
+[node name="HomeToLevelSelector" type="Button" parent="MainMenu/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Selector"
+
+[node name="AudioSettings" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="AudioToHome" type="Button" parent="AudioSettings"]
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 135.324
+offset_bottom = 71.251
+text = "RETURN"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioSettings"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_p8ccj")
+
+[node name="SliderMaster" type="HSlider" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+
+[node name="Label2" type="Label" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_p8ccj")
+
+[node name="SliderMusic" type="HSlider" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+
+[node name="Label3" type="Label" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_p8ccj")
+
+[node name="SliderSFX" type="HSlider" parent="AudioSettings/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+
+[node name="LevelSelector" type="CanvasLayer" parent="."]
+
+[node name="LevelSelectorToHome" type="Button" parent="LevelSelector"]
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 135.324
+offset_bottom = 71.251
+text = "RETURN"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelSelector"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -33.0
+offset_right = 31.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelSelector/HBoxContainer"]
+layout_mode = 2
+
+[node name="Level1" type="Button" parent="LevelSelector/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level 1"
 
-[node name="Level2" type="Button" parent="UI/HBoxContainer/VBoxContainer"]
+[node name="Level2" type="Button" parent="LevelSelector/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level 2"
 
@@ -38,5 +139,5 @@ color = Color(0.145098, 0.0745098, 0.101961, 1)
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[connection signal="pressed" from="UI/HBoxContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
-[connection signal="pressed" from="UI/HBoxContainer/VBoxContainer/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="LevelSelector/HBoxContainer/VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="LevelSelector/HBoxContainer/VBoxContainer/Level2" to="." method="_on_level_2_pressed"]

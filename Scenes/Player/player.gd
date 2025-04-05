@@ -11,6 +11,8 @@ var score = 0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 const FIREBALL: PackedScene = preload("res://Scenes/Fireball/fireball.tscn")
+@onready var sfx: AudioStreamPlayer2D = $SFX
+
 @onready var gun_point: Marker2D = $GunPoint
 @onready var shoot_timer: Timer = $ShootTimer
 @export var time_between_shots: float = 0.5
@@ -26,6 +28,7 @@ func _physics_process(delta: float):
 		var fireball: Node2D = FIREBALL.instantiate()
 		fireball.global_transform = gun_point.global_transform
 		main.add_child(fireball)
+		sfx.play()
 		shoot_timer.start(time_between_shots)
 	
 	var input_dir: Vector2 = Input.get_vector("move_left","move_right","move_up","move_down")

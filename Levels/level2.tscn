@@ -14,23 +14,17 @@ font_size = 44
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dj5hn")
 
-[node name="OST" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ojro4")
-volume_db = -30.18
-autoplay = true
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -10
 
-[node name="Map" parent="." instance=ExtResource("1_24phs")]
-
-[node name="FinishGoal" parent="." instance=ExtResource("2_p0prn")]
-position = Vector2(276, 268)
-
-[node name="Player" parent="." node_paths=PackedStringArray("score_display") instance=ExtResource("5_xv7eh")]
-position = Vector2(8, 39)
-score_display = NodePath("../UI/Score")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-101, 3)
-zoom = Vector2(4, 4)
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 1166.0
+offset_bottom = 660.0
+color = Color(0.145098, 0.0745098, 0.101961, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -44,23 +38,34 @@ label_settings = SubResource("LabelSettings_lr0ko")
 metadata/_edit_use_anchors_ = true
 
 [node name="Escape" type="Button" parent="UI"]
-offset_left = 1057.0
-offset_top = 12.0
-offset_right = 1153.0
-offset_bottom = 43.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -154.0
+offset_top = 11.0
+offset_right = -21.6759
+offset_bottom = 53.251
+grow_horizontal = 0
 text = "Main Menu"
 
-[node name="Background" type="CanvasLayer" parent="."]
-layer = -10
+[node name="OST" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ojro4")
+volume_db = -30.18
+autoplay = true
+bus = &"Music"
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-offset_left = -7.0
-offset_top = -5.0
-offset_right = 1166.0
-offset_bottom = 660.0
-color = Color(0.145098, 0.0745098, 0.101961, 1)
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
+[node name="Map" parent="." instance=ExtResource("1_24phs")]
+
+[node name="FinishGoal" parent="." instance=ExtResource("2_p0prn")]
+position = Vector2(276, 268)
+
+[node name="Player" parent="." node_paths=PackedStringArray("score_display") instance=ExtResource("5_xv7eh")]
+position = Vector2(8, 39)
+score_display = NodePath("../UI/Score")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-101, 3)
+zoom = Vector2(4, 4)
 
 [node name="Enemies" type="Node" parent="."]
 

@@ -1,0 +1,21 @@
+SFX MUSIC:
+	Music loop
+	Enemy hit
+
+GAME LOOP
+
+Levels
+
+Objective unclear
+
+Polish menus
+
+Coins no use
+
+Empty levels
+
+
+
+
+SUGGESTION:
+Add bosses
